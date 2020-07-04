@@ -108,3 +108,67 @@
 
 }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//Side Navigation
+.side-nav{
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+    
+    &__iten{
+        position: relative;
+        &:not(:last-child){
+            margin-bottom:.5rem; 
+        }
+
+    }
+    &__iten::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left:0;
+        height: 100%;
+        width : 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transition: transform .2s,
+                    width .4s cubic-bezier(1,0,0,1) .2s, background-color .1s;
+    }
+    &__iten:hover::before,&__iten--active::before{
+        transform: scaleY(1);
+        width: 100%;
+    }
+    &__iten:active::before{
+        background-color: var(--color-primary-light);
+    }
+    &__link:link,
+    &__link:visited{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--color-grey-light-1);
+        display: block;
+        padding: 1.5rem 3rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+    &__icon{
+        height: 1.75rem;
+        width: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor;
+
+    }
+
+}
+ 
+/////////////////////////////
+//legal section
+
+.legal{
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-grey-light-4);
+    padding: 2.5rem
+}
